@@ -7,10 +7,12 @@ import { NotebookPen } from "lucide-react";
 import { ProgrammingLanguagesDropdown } from "../ui/programming-lang-dropdown";
 import { Button } from "../ui/button";
 
+// Props interface for QuickStart buttons including code functionality
 interface QuickStartButtonsProps {
+  // Handler for starting new content - can be code or text
   handleQuickStart: (
-    type: "text" | "code",
-    language?: ProgrammingLanguageOptions
+    type: "text", // | "code", // commenting out code type
+    // language?: ProgrammingLanguageOptions // commenting out language option
   ) => void;
   composer: React.ReactNode;
 }
@@ -28,6 +30,7 @@ const QuickStartPrompts = () => {
   return (
     <div className="flex flex-col w-full gap-2 text-gray-700">
       <div className="flex gap-2 w-full">
+        {/* Commenting out code-related button
         <Button
           onClick={(e) =>
             handleClick((e.target as HTMLButtonElement).textContent || "")
@@ -37,6 +40,7 @@ const QuickStartPrompts = () => {
         >
           <TighterText>Write me a TODO app in React</TighterText>
         </Button>
+        */}
         <Button
           onClick={(e) =>
             handleClick((e.target as HTMLButtonElement).textContent || "")
@@ -61,6 +65,7 @@ const QuickStartPrompts = () => {
             Help me draft an email to my professor Craig
           </TighterText>
         </Button>
+        {/* Commenting out code-related button
         <Button
           onClick={(e) =>
             handleClick((e.target as HTMLButtonElement).textContent || "")
@@ -70,15 +75,17 @@ const QuickStartPrompts = () => {
         >
           <TighterText>Write a web scraping program in Python</TighterText>
         </Button>
+        */}
       </div>
     </div>
   );
 };
 
 const QuickStartButtons = (props: QuickStartButtonsProps) => {
-  const handleLanguageSubmit = (language: ProgrammingLanguageOptions) => {
-    props.handleQuickStart("code", language);
-  };
+  // Commenting out language submit handler
+  // const handleLanguageSubmit = (language: ProgrammingLanguageOptions) => {
+  //   props.handleQuickStart("code", language);
+  // };
 
   return (
     <div className="flex flex-col gap-8 items-center justify-center w-full">
@@ -93,7 +100,9 @@ const QuickStartButtons = (props: QuickStartButtonsProps) => {
             <TighterText>New Markdown</TighterText>
             <NotebookPen />
           </Button>
+          {/* Commenting out programming language dropdown
           <ProgrammingLanguagesDropdown handleSubmit={handleLanguageSubmit} />
+          */}
         </div>
       </div>
       <div className="flex flex-col gap-6 mt-2 w-full">
@@ -105,10 +114,12 @@ const QuickStartButtons = (props: QuickStartButtonsProps) => {
   );
 };
 
+// Props interface for ThreadWelcome component including code functionality
 interface ThreadWelcomeProps {
+  // Handler for starting new content - can be code or text
   handleQuickStart: (
-    type: "text" | "code",
-    language?: ProgrammingLanguageOptions
+    type: "text", // | "code", // commenting out code type
+    // language?: ProgrammingLanguageOptions // commenting out language option
   ) => void;
   composer: React.ReactNode;
 }
