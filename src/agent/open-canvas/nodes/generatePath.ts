@@ -19,11 +19,12 @@ export const generatePath = async (
   state: typeof OpenCanvasGraphAnnotation.State,
   config: LangGraphRunnableConfig
 ) => {
-  if (state.highlightedCode) {
-    return {
-      next: "updateArtifact",
-    };
-  }
+  // Commenting out code-related routing
+  // if (state.highlightedCode) {
+  //   return {
+  //     next: "updateArtifact",
+  //   };
+  // }
   if (state.highlightedText) {
     return {
       next: "updateHighlightedText",
@@ -41,16 +42,17 @@ export const generatePath = async (
     };
   }
 
-  if (
-    state.addComments ||
-    state.addLogs ||
-    state.portLanguage ||
-    state.fixBugs
-  ) {
-    return {
-      next: "rewriteCodeArtifactTheme",
-    };
-  }
+  // Commenting out code modification routing
+  // if (
+  //   state.addComments ||
+  //   state.addLogs ||
+  //   state.portLanguage ||
+  //   state.fixBugs
+  // ) {
+  //   return {
+  //     next: "rewriteCodeArtifactTheme",
+  //   };
+  // }
 
   if (state.customQuickActionId) {
     return {

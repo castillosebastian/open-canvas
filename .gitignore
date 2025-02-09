@@ -16,6 +16,10 @@
 # production
 /build
 
+# adaptaciones
+/alt0adaptations
+/docs_generator
+
 # misc
 .DS_Store
 *.pem
@@ -37,3 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 credentials.json
+# LangGraph API
+.langgraph_api

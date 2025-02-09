@@ -146,11 +146,8 @@ export const getModelConfig = (
   apiKey?: string;
   baseUrl?: string;
 } => {
-  const customModelName = config.configurable?.customModelName as string;
-  if (!customModelName) {
-    throw new Error("Model name is missing in config.");
-  }
-
+  const customModelName = (config.configurable?.customModelName as string) || "gpt-4";
+  
   if (customModelName.startsWith("azure/")) {
     const actualModelName = customModelName.replace("azure/", "");
     return {
